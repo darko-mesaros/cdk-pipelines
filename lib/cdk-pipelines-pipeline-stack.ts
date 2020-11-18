@@ -24,6 +24,7 @@ export class CdkPipelinesPipelineStack extends Stack {
         actionName: 'GitHub',
         output: sourceArtifact,
         oauthToken: SecretValue.secretsManager('github-token'),
+        branch: 'main',
         owner: 'darko-mesaros',
         repo: 'cdk-pipelines',
       }),
@@ -41,7 +42,7 @@ export class CdkPipelinesPipelineStack extends Stack {
     // This is where we add the application stages
     // PreProd
     pipeline.addApplicationStage(new CdkPipelinesStage(this, 'PreProd', {
-      env: { account: '495672770756', region: 'eu-west-1' }
+      env: { account: '4956727707561', region: 'eu-west-1' }
     }));
   }
 }
